@@ -13,11 +13,14 @@
 # jic$Year <- substring(jic$Year, 2) %>% as.numeric()
 
 #get tags
+inflation_meta <- function(){
 jic_ver <- jic %>% dplyr::select(Version) %>% unique() %>% c()
 jic_indices <- jic %>% dplyr::select(Indice) %>% unique() %>% as.list()
 jic_service <- list(Navy = "n", USMC="m", DOD = "d")
 jic_tags <- jic %>% dplyr::select(tags) %>% unique()
 
+return(list(jic_ver, jic_indices, jic_service, jic_tags))
+}
 
 
 #' Title
