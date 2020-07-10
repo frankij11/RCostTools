@@ -23,6 +23,17 @@ return(list(jic_ver, jic_indices, jic_service, jic_tags))
 }
 
 
+#' Get copy of inflation tables
+#' @param BY get year for inflation indice
+#'
+#' @return
+#' @export
+#'
+#' @examples
+jic <- function(BY=2020){
+  return(change_by(2020))
+}
+
 #' Title
 #'
 #' @param BY: Base Year
